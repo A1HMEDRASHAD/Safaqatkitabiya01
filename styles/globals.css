@@ -1,0 +1,43 @@
+@import url('https://fonts.googleapis.com/css2?family=Tajawal:wght@400;500;700;800;900&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  direction: rtl;
+}
+
+body {
+  font-family: 'Tajawal', sans-serif;
+  background-color: #f8f9fa;
+  color: #0f0f0f;
+  overflow-x: hidden;
+  -webkit-tap-highlight-color: transparent;
+}
+
+/* إخفاء شريط التمرير في شريط الفئات مع بقاء التمرير باللمس سلساً */
+.no-scrollbar::-webkit-scrollbar {
+  display: none;
+}
+.no-scrollbar {
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
+
+/* تأثير الزجاج لنظام One UI 9 */
+.glass-bar {
+  background: rgba(255, 255, 255, 0.85);
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+}
+
+/* تنسيق خاص عند طباعة أو حفظ الفاتورة الإلكترونية كـ PDF */
+@media print {
+  .no-print {
+    display: none !important;
+  }
+  body {
+    background-color: #ffffff !important;
+  }
+}
